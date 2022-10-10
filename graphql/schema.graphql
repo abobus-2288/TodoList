@@ -1,0 +1,64 @@
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    user(
+      id: ID @eq @rules(apply: ["prohibits:email", "required_without:email"])
+
+      email: String @eq @rules(apply: ["prohibits:id", "required_without:id", "email"])
+    ): User @find
+
+    users(
+      name: String @where(operator: "like")
+    ): [User!]! @paginate(defaultCount: 10)
+
+    todos: [Todo!]! @paginate(defaultCount: 10) @orderBy(column: "id", direction: ASC)
+    todo(id: ID! @eq): Todo @find
+}
+
+type Mutation {
+    addTodo(
+      title: String!
+    ): Todo @create @broadcast(subscription: "TodoCreated")
+
+    removeTodo(
+      id: ID!
+    ): TodoDeletedResponse @broadcast(subscription: "TodoDeleted")
+
+    updateTodo(
+      id: ID!
+      title: String
+    ): Todo @update @broadcast(subscription: "TodoUpdated")
+}
+
+type Subscription {
+    TodoCreated: Todo
+    TodoDeleted: Todo
+    TodoUpdated: Todo
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    email_verified_at: DateTime
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type Todo {
+    id: ID!
+    title: String!
+    is_completed: Boolean!
+    is_deleted: Boolean!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type TodoDeletedResponse {
+    message: String!
+    status: Int!
+    id: ID
+    title: String
+}
+
+
