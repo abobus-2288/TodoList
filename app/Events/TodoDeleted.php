@@ -15,16 +15,14 @@ class TodoDeleted implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public Todo $todo;
-
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Todo $todo)
+    public function __construct()
     {
-        $this->todo = $todo;
+
     }
 
     /**

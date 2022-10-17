@@ -18,7 +18,6 @@ final class RemoveTodo
                 return [
                     'message' => 'Todo deleted',
                     'status' => 500,
-                    'id' => $todo->id
                 ];
             } else {
                 return [

@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d25a9325-3eea-4630-bd2b-5d8ecc8eb877" name="Changes" comment="" />
+    <list default="true" id="d25a9325-3eea-4630-bd2b-5d8ecc8eb877" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/graphql/subscriptions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Events/TodoDeleted.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Events/TodoDeleted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/GraphQL/Mutations/RemoveTodo.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/GraphQL/Mutations/RemoveTodo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Observers/TodoObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Observers/TodoObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/graphiql.php" beforeDir="false" afterPath="$PROJECT_DIR$/../config/graphiql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql/schema.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Providers.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +27,8 @@
       <list>
         <option value="CSS File" />
         <option value="Css Module" />
-        <option value="TypeScript File" />
         <option value="TSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -27,7 +39,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FM8iCwIL7RzhlKFbed4O5XbHxu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,7 +97,10 @@
       <workItem from="1664732846469" duration="598000" />
       <workItem from="1664810616849" duration="1679000" />
       <workItem from="1665346684519" duration="100000" />
-      <workItem from="1665407162435" duration="1575000" />
+      <workItem from="1665407162435" duration="5080000" />
+      <workItem from="1665435086326" duration="617000" />
+      <workItem from="1665502960089" duration="1562000" />
+      <workItem from="1665946481489" duration="123000" />
     </task>
     <servers />
   </component>

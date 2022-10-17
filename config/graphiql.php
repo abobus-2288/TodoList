@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'subscription-endpoint' => env('GRAPHIQL_SUBSCRIPTION_ENDPOINT', '/api/graphql'),
+    'subscription-endpoint' => env('GRAPHIQL_SUBSCRIPTION_ENDPOINT', '/api/graphql/subscriptions'),
 
     /*
     |--------------------------------------------------------------------------

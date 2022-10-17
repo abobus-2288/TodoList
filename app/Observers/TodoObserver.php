@@ -39,7 +39,7 @@ class TodoObserver
      */
     public function deleted(Todo $todo)
     {
-        event(new \App\Events\TodoDeleted($todo));
+        event(new \App\Events\TodoDeleted());
         Subscription::broadcast("TodoDeleted", $todo);
     }
 
