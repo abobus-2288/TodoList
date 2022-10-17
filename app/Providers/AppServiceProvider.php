@@ -27,9 +27,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Todo::observe(TodoObserver::class);
-
-        Vite::useManifest(function () {
-            return true;
-        });
     }
 }
