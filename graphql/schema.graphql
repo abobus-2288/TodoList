@@ -22,18 +22,24 @@ type Mutation {
 
     removeTodo(
       id: ID!
-    ): TodoDeletedResponse @broadcast(subscription: "TodoDeleted")
+    ): TodoDeletedResponse
 
     updateTodo(
       id: ID!
       title: String
-    ): Todo @update @broadcast(subscription: "TodoUpdated")
+    ): TodoUpdatedResponse
+
+    setTodoIsCompleted(
+      id: ID!
+      is_completed: Boolean!
+    ): TodoUpdatedResponse
 }
 
 type Subscription {
     TodoCreated: Todo
-    TodoDeleted: Todo
+    TodoDeleted: ID
     TodoUpdated: Todo
+    TodoIsCompleted: Todo
 }
 
 type User {
@@ -58,4 +64,8 @@ type TodoDeletedResponse {
     status: Int!
 }
 
-
+type TodoUpdatedResponse {
+    message: String!
+    status: Int!
+    todo: Todo
+}

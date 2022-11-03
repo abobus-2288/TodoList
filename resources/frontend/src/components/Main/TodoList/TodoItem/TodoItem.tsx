@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+
+import { Buttons } from "@/frontend/src/components/Main/TodoList/TodoItem/Buttons/Buttons";
 
 import classes from '../TodoList.module.css';
-import { Buttons } from "@/frontend/src/components/Main/TodoList/TodoItem/Buttons/Buttons";
+
 import { Todo } from "@/frontend/src/graphql/types";
 
 interface TodoItemProps {
@@ -10,14 +13,20 @@ interface TodoItemProps {
 
 const TodoItem = (props: TodoItemProps) => {
     return (
-        <li className={classes.tableRow}>
-            <div className={`${classes.col} ${classes.col1}`}>{props.todo.id}</div>
-            <div className={`${classes.col} ${classes.col2}`}>{props.todo.title}</div>
-            <div className={`${classes.col} ${classes.col3}`}>{props.todo.completed ? 'Yes' : 'No'}</div>
-            <div className={`${classes.col} ${classes.col4}`}>
+        <tr className={classes.tableRow}>
+            <td>
+                <Link to={`/todo/${props.todo.id}`}>{props.todo.id}</Link>
+            </td>
+            <td>
+                <Link to={`/todo/${props.todo.id}`}>{props.todo.title}</Link>
+            </td>
+            <td>
+                {props.todo.is_completed ? "Yes" : "No"}
+            </td>
+            <td>
                 <Buttons todo={props.todo}/>
-            </div>
-        </li>
+            </td>
+        </tr>
     )
 }
 

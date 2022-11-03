@@ -13,14 +13,14 @@ interface ButtonProps {
 export const Buttons = (props: ButtonProps) => {
     return (
         <div>
-            <EditButton todo={props.todo}/>
+            {/*<EditButton todo={props.todo}/>*/}
             <CompleteButton todo={props.todo}/>
             <DeleteButton todo={props.todo}/>
         </div>
     )
 }
 
-export const EditButton = (props: ButtonProps) => {
+const EditButton = (props: ButtonProps) => {
     return (
         <button className={classes.btn}>
             Edit
@@ -28,7 +28,16 @@ export const EditButton = (props: ButtonProps) => {
     )
 }
 
-export const CompleteButton = (props: ButtonProps) => {
+const CompleteButton = (props: ButtonProps) => {
+
+    const [completeTodo, {}] = useMutation<{ message: string, status: number, todo: Todo },
+        { id: number, is_completed: boolean }>(DELETE_TODO, {
+        variables: {
+            id: props.todo.id,
+            is_completed: !props.todo.is_completed
+        }
+    });
+
     return (
         <button className={classes.btn}>
             Complete
@@ -36,7 +45,7 @@ export const CompleteButton = (props: ButtonProps) => {
     )
 }
 
-export const DeleteButton = (props: ButtonProps) => {
+const DeleteButton = (props: ButtonProps) => {
 
     const [deleteTodo, {
         error: DeleteTodoError,
@@ -49,13 +58,13 @@ export const DeleteButton = (props: ButtonProps) => {
         }
     });
 
-    const onClick = () => {
-        if (confirm("Are you sure you want to delete this todo?")) {
-            deleteTodo();
-            if (!DeleteTodoLoading) {
-                document.location.reload();
+    const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        alert(props.todo.id);
+        deleteTodo().then(
+            (res) => {
+                console.log(res);
             }
-        }
+        );
     }
 
     return (
@@ -65,7 +74,7 @@ export const DeleteButton = (props: ButtonProps) => {
     )
 }
 
-export const UnCompleteButton = (props: ButtonProps) => {
+const UnCompleteButton = (props: ButtonProps) => {
     return (
         <button className={classes.btn}>
             UnComplete

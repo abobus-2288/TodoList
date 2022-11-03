@@ -16,7 +16,6 @@ class TodoObserver
     public function created(Todo $todo)
     {
         event(new \App\Events\TodoCreated($todo));
-        Subscription::broadcast("TodoCreated", $todo);
     }
 
     /**
@@ -27,8 +26,12 @@ class TodoObserver
      */
     public function updated(Todo $todo)
     {
-        event(new \App\Events\TodoUpdated($todo));
-        Subscription::broadcast("TodoUpdated", $todo);
+//        switch ($type) {
+//            case "is_completed":
+//                event(new \App\Events\TodoUpdated($todo, 'is_completed'));
+//                break;
+//        }
+//        event(new \App\Events\TodoUpdated($todo));
     }
 
     /**
@@ -39,8 +42,7 @@ class TodoObserver
      */
     public function deleted(Todo $todo)
     {
-        event(new \App\Events\TodoDeleted());
-        Subscription::broadcast("TodoDeleted", $todo);
+
     }
 
     /**

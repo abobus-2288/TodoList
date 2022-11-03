@@ -5,23 +5,23 @@ namespace App\GraphQL\Mutations;
 use App\Models\Todo;
 use Nuwave\Lighthouse\Execution\Utils\Subscription;
 
-final class RemoveTodo
+final class SetTodoIsCompleted
 {
     /**
-     * @param null $_
-     * @param array{} $args
+     * @param  null  $_
+     * @param  array{}  $args
      */
     public function __invoke($_, array $args)
     {
         if (Todo::whereId($args['id'])->exists()) {
             $todo = Todo::whereId($args['id'])->first();
-            if ($todo->delete()) {
-                event(new \App\Events\TodoDeleted($args['id']));
-                Subscription::broadcast("TodoDeleted", $args['id']);
+            $todo->is_completed = $args['is_completed'];
+            if ($todo->save()) {
+                event(new \App\Events\TodoUpdated($todo, 'is_completed'));
                 return [
-                    'message' => 'Todo deleted',
+                    'message' => 'Todo updated',
                     'status' => 200,
-                    'id' => $args['id']
+                    'todo' => $todo
                 ];
             } else {
                 return [

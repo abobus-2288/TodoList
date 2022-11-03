@@ -16,15 +16,17 @@ class TodoUpdated implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public Todo $todo;
+    public String $type;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Todo $todo)
+    public function __construct(Todo $todo, String $type)
     {
         $this->todo = $todo;
+        $this->type = $type;
     }
 
     /**
@@ -34,6 +36,6 @@ class TodoUpdated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('TodoUpdated');
+        return new Channel('todos');
     }
 }

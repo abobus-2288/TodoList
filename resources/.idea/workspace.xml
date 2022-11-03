@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d25a9325-3eea-4630-bd2b-5d8ecc8eb877" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/graphql/subscriptions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/api/pusher.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Main/Todo/Todo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Main/Todo/Todo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/etc/Loader/Loader.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/etc/Loader/Loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Events/TodoCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Events/TodoCreated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Events/TodoDeleted.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Events/TodoDeleted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Events/TodoUpdated.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Events/TodoUpdated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/GraphQL/Mutations/RemoveTodo.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/GraphQL/Mutations/RemoveTodo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/Observers/TodoObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Observers/TodoObserver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../config/graphiql.php" beforeDir="false" afterPath="$PROJECT_DIR$/../config/graphiql.php" afterDir="false" />
@@ -15,7 +22,16 @@
       <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Providers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoItem/Buttons/Buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoItem/Buttons/Buttons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoItem/TodoItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoItem/TodoItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Main/TodoList/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/graphql/mutations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/graphql/mutations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/graphql/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/graphql/queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/graphql/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/graphql/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,14 +42,39 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="TypeScript File" />
         <option value="Css Module" />
         <option value="TSX File" />
-        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Auth" />
+                    <option name="lastUsedInstant" value="1666037237" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1666037236" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,13 +92,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/sites/MF-Projects/2Y&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/sites/MF-Projects/JsTasks&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\EugeneLobach\\AppData\\Local\\JetBrains\\Toolbox\\apps\\WebStorm\\ch-0\\221.6008.13\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;
   }
 }</component>
@@ -97,10 +139,24 @@
       <workItem from="1664732846469" duration="598000" />
       <workItem from="1664810616849" duration="1679000" />
       <workItem from="1665346684519" duration="100000" />
-      <workItem from="1665407162435" duration="5080000" />
-      <workItem from="1665435086326" duration="617000" />
-      <workItem from="1665502960089" duration="1562000" />
-      <workItem from="1665946481489" duration="123000" />
+      <workItem from="1665407162435" duration="1575000" />
+      <workItem from="1666362354815" duration="6867000" />
+      <workItem from="1666512898474" duration="3109000" />
+      <workItem from="1666519910017" duration="1075000" />
+      <workItem from="1666539190801" duration="1246000" />
+      <workItem from="1666551547902" duration="1200000" />
+      <workItem from="1666606855196" duration="690000" />
+      <workItem from="1666607962832" duration="5367000" />
+      <workItem from="1666626353810" duration="732000" />
+      <workItem from="1666627113021" duration="3763000" />
+      <workItem from="1666637047298" duration="1529000" />
+      <workItem from="1666712086980" duration="2175000" />
+      <workItem from="1666720001418" duration="1281000" />
+      <workItem from="1666796597884" duration="75000" />
+      <workItem from="1666962110964" duration="7533000" />
+      <workItem from="1667238463552" duration="168000" />
+      <workItem from="1667239758794" duration="69000" />
+      <workItem from="1667480371539" duration="1200000" />
     </task>
     <servers />
   </component>

@@ -34,6 +34,6 @@ class TodoCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('TodoCreated');
+        return new Channel('todos');
     }
 }
