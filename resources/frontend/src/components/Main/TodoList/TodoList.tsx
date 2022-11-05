@@ -8,7 +8,7 @@ import { CREATE_TODO } from '@/frontend/src/graphql/mutations';
 import { todosQuery } from "@/frontend/src/graphql/queries";
 import { useMutation, useQuery } from "@apollo/client";
 
-import { Table } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 
 import TodoItem from "@/frontend/src/components/Main/TodoList/TodoItem/TodoItem";
 import Loader from "@/frontend/src/components/etc/Loader/Loader";
@@ -39,10 +39,6 @@ const TodoList = () => {
             title: !todosLoading ? queryTodosData.title : ''
         }
     });
-
-    if (!todosLoading) {
-        // console.log(queryTodosData)
-    }
 
     const channel = pusher.subscribe('todos',);
 
@@ -86,7 +82,7 @@ const TodoList = () => {
 
 
     return (
-        <div className={classes.todoList}>
+        <Container>
             <h1>Todo List</h1>
             {queryTodosError && <p>Error : {queryTodosError.message}</p>}
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -111,11 +107,13 @@ const TodoList = () => {
                 {!todosLoading && queryTodosData.todos.data.map((todo: any) =>
                     <TodoItem key={todo.id} todo={todo}/>
                 )}
+
+
                 </tbody>
             </Table>
 
 
-        </div>
+        </Container>
     )
 }
 
