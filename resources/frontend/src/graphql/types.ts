@@ -30,3 +30,33 @@ export interface TodoResponse {
         paginatorInfo: paginatorInfo;
     }
 }
+
+export interface RegisterResponse {
+    data: {
+        register: {
+            message: string;
+            token: string;
+            user: User;
+        }
+    }
+}
+export interface LoginResponse {
+    data: {
+        login: {
+            message: string;
+            token: string;
+            user: User;
+        }
+    }
+}
+
+export interface RegisterInput {
+    name: string;
+    email: string;
+    password: string;
+}
+
+export interface LoginInput {
+    email: string;
+    password: string;
+}

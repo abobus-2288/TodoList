@@ -31,3 +31,31 @@ export const SET_TODO_IS_COMPLETED = gql`
         }
     }
 `
+
+export const REGISTER = gql`
+    mutation register($name:String!,$password:String!,$email:String!) {
+        register(name:$name,password:$password,email:$email) {
+            message
+            token
+            user {
+                id
+            }
+        }
+    }
+`
+
+export const LOGIN = gql`
+    mutation login($email:String!,$password:String!) {
+        login(email:$email,password:$password) {
+            message
+            token
+            user {
+                id
+                name
+                email
+                created_at
+                updated_at
+            }
+        }
+    }
+`

@@ -18,7 +18,7 @@ type Query {
 type Mutation {
     addTodo(
       title: String!
-    ): Todo @create @broadcast(subscription: "TodoCreated")
+    ): Todo @create
 
     removeTodo(
       id: ID!
@@ -33,6 +33,18 @@ type Mutation {
       id: ID!
       is_completed: Boolean!
     ): TodoUpdatedResponse
+
+    register(
+        name: String!
+        email: String
+        password: String!
+    ): RegisterResponse
+
+    login(email: String!
+        password: String!
+    ): RegisterResponse
+
+    logout: LogoutResponse
 }
 
 type Subscription {
@@ -68,4 +80,14 @@ type TodoUpdatedResponse {
     message: String!
     status: Int!
     todo: Todo
+}
+
+type RegisterResponse {
+    user: User
+    message: String
+    token: String
+}
+
+type LogoutResponse {
+    message: String
 }
