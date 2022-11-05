@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'subscription-endpoint' => env('GRAPHIQL_SUBSCRIPTION_ENDPOINT', 'ws://ws-eu.pusher.com:80/app/ff7a8203cc1de341f2fc?protocol=5'),
+    'subscription-endpoint' => env('GRAPHIQL_SUBSCRIPTION_ENDPOINT', 'wss://localhost:8000/api/graphql/subscriptions'),
 
     /*
     |--------------------------------------------------------------------------

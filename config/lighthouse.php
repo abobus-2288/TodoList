@@ -16,7 +16,7 @@ return [
         /*
          * The URI the endpoint responds to, e.g. mydomain.com/graphql.
          */
-        'uri' => '/graphql',
+        'uri' => 'graphql',
 
         /*
          * Lighthouse creates a named route for convenient URL generation and redirects.
@@ -213,7 +213,7 @@ return [
          * Allow clients to query paginated lists without specifying the amount of items.
          * Setting this to `null` means clients have to explicitly ask for the count.
          */
-        'default_count' => null,
+        'default_count' => 15,
 
         /*
          * Limit the maximum amount of items that clients can request from paginated lists.
