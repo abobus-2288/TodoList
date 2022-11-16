@@ -18,7 +18,6 @@ class Login
             $user = User::where('email', $args['email'])->first();
 
             if (Hash::check($args['password'], $user->password)) {
-                $expiresIn = Carbon::now()->addDay();
                 return [
                     'user' => $user,
                     'message' => 'Successfully signed in',

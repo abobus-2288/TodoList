@@ -28,7 +28,6 @@ class Register
 
             if ($user->save()) {
                 $token = $user->createToken('auth_token')->plainTextToken;
-                $expiresIn = Carbon::now()->addDay();
 
                 return [
                     'user' => $user,
